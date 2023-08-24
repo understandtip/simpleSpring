@@ -1,6 +1,6 @@
-package com.jackqiu.simpleSpring.factory.config;
+package com.jackqiu.simpleSpring.beans.factory.config;
 
-import com.jackqiu.simpleSpring.PropertyValues;
+import com.jackqiu.simpleSpring.beans.PropertyValues;
 
 /**
  * 用于Bean的定义

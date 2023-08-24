@@ -1,4 +1,4 @@
-package com.jackqiu.simpleSpring.factory.config;
+package com.jackqiu.simpleSpring.beans.factory.config;
 
 /**
  * 定义注册单例bean的实例

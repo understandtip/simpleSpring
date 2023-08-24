@@ -1,4 +1,4 @@
-package com.jackqiu.simpleSpring.factory.config;
+package com.jackqiu.simpleSpring.beans.factory.config;
 
 /**
  * Bean的引用类型，用于存放Bean类型的引用对象

@@ -1,7 +1,7 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
-import com.jackqiu.simpleSpring.BeansException;
-import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.BeansException;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanDefinition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,5 +28,10 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) {
         beanDefinitionMap.put(name, beanDefinition);
+    }
+
+    @Override
+    public boolean containsBeanDefinition(String beanName) {
+        return beanDefinitionMap.containsKey(beanName);
     }
 }

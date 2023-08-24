@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/beanFactory/01-beanFactory.iml" filepath="$PROJECT_DIR$/beanFactory/01-beanFactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-beanFactorys/01-beanFactorys.iml" filepath="$PROJECT_DIR$/01-beanFactorys/01-beanFactorys.iml" />
     </modules>
   </component>
 </project>

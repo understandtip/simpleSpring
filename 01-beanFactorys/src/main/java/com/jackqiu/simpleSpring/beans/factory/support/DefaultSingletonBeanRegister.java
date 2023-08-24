@@ -1,6 +1,6 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
-import com.jackqiu.simpleSpring.factory.config.SingletonBeanRegister;
+import com.jackqiu.simpleSpring.beans.factory.config.SingletonBeanRegister;
 
 import java.util.HashMap;
 import java.util.Map;

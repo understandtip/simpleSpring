@@ -1,6 +1,6 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
-import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
 

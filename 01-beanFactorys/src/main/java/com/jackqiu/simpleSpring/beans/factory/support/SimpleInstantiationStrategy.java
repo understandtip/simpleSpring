@@ -1,10 +1,9 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
-import com.jackqiu.simpleSpring.BeansException;
-import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.BeansException;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * 基于Java反射实现的实例化对象策略

@@ -1,4 +1,4 @@
-package com.jackqiu.simpleSpring;
+package com.jackqiu.simpleSpring.beans;
 
 import java.util.ArrayList;
 import java.util.List;

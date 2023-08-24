@@ -1,8 +1,8 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
-import com.jackqiu.simpleSpring.factory.BeanFactory;
-import com.jackqiu.simpleSpring.BeansException;
-import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.factory.BeanFactory;
+import com.jackqiu.simpleSpring.beans.BeansException;
 
 /**
  * 实现了getBean方法的逻辑

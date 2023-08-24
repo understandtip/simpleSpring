@@ -1,11 +1,11 @@
-package com.jackqiu.simpleSpring.factory.support;
+package com.jackqiu.simpleSpring.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.jackqiu.simpleSpring.BeansException;
-import com.jackqiu.simpleSpring.PropertyValue;
-import com.jackqiu.simpleSpring.PropertyValues;
-import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
-import com.jackqiu.simpleSpring.factory.config.BeanReference;
+import com.jackqiu.simpleSpring.beans.BeansException;
+import com.jackqiu.simpleSpring.beans.PropertyValue;
+import com.jackqiu.simpleSpring.beans.PropertyValues;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.beans.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
 

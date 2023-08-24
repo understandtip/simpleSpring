@@ -1,4 +1,4 @@
-package com.jackqiu.simpleSpring;
+package com.jackqiu.simpleSpring.beans;
 
 /**
  * 用来存放Bean的每一个属性名和属性值的类

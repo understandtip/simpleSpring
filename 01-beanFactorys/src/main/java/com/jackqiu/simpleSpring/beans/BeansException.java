@@ -1,4 +1,4 @@
-package com.jackqiu.simpleSpring;
+package com.jackqiu.simpleSpring.beans;
 
 /**
  * 通用的Bean的异常类
