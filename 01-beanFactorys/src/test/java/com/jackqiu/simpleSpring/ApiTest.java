@@ -1,7 +1,9 @@
 package com.jackqiu.simpleSpring;
 
+import com.jackqiu.simpleSpring.bean.UserDao;
 import com.jackqiu.simpleSpring.bean.UserService;
 import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.factory.config.BeanReference;
 import com.jackqiu.simpleSpring.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;
 
@@ -17,7 +19,7 @@ public class ApiTest {
         defaultListableBeanFactory.registerBeanDefinition("userService", beanDefinition);
 
         //第一次获取对象
-        UserService userService = (UserService) defaultListableBeanFactory.getBean("userService","jackQiu");
+        UserService userService = (UserService) defaultListableBeanFactory.getBean("userService", "jackQiu");
         userService.queryUserInfo();
         System.out.println(userService);
     }
@@ -40,5 +42,23 @@ public class ApiTest {
         UserService userService1 = (UserService) defaultListableBeanFactory.getBean("userService");
         userService1.queryUserInfo();
         System.out.println(userService1);
+    }
+
+    @Test
+    public void test_BeanFactoryOptimizing() {
+        //定义Bean工厂
+        DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+        //注册UserDao
+        defaultListableBeanFactory.registerBeanDefinition("userDao", new BeanDefinition(UserDao.class));
+        //定义Bean
+        PropertyValues propertyValues = new PropertyValues();
+        propertyValues.addPropertyValue(new PropertyValue("uId", "10001"));
+        propertyValues.addPropertyValue(new PropertyValue("userDao", new BeanReference("userDao")));
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class, propertyValues);
+        //注册Bean
+        defaultListableBeanFactory.registerBeanDefinition("userService", beanDefinition);
+        //获取Bean
+        UserService userService = (UserService) defaultListableBeanFactory.getBean("userService");
+        userService.queryUserInfo();
     }
 }

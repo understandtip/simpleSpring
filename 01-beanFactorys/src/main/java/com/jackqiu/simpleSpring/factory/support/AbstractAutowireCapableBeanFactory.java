@@ -1,7 +1,11 @@
 package com.jackqiu.simpleSpring.factory.support;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.jackqiu.simpleSpring.BeansException;
+import com.jackqiu.simpleSpring.PropertyValue;
+import com.jackqiu.simpleSpring.PropertyValues;
 import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
+import com.jackqiu.simpleSpring.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
 
@@ -16,14 +20,34 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     @Override
     protected Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) {
-        Object object = null;
+        Object bean = null;
         try {
-            object = createBeanInstance(beanName, beanDefinition, args);
+            bean = createBeanInstance(beanName, beanDefinition, args);
+            //需要进行属性填充
+            applyPropertyValues(beanName,bean,beanDefinition);
         } catch (Exception e) {
             throw new BeansException("Failed to create an instance of the bean", e);
         }
-        addSingleton(beanName, object);
-        return object;
+        addSingleton(beanName, bean);
+        return bean;
+    }
+
+    protected void applyPropertyValues(String beanName, Object bean, BeanDefinition beanDefinition) {
+        try {
+            PropertyValues propertyValues = beanDefinition.getPropertyValues();
+            for (PropertyValue propertyValue : propertyValues.getPropertyValues()) {
+                Object value = propertyValue.getValue();
+                String name = propertyValue.getName();
+                if(value instanceof BeanReference){
+                    BeanReference beanReference = (BeanReference) value;
+                    value = getBean(beanReference.getBeanName());
+                }
+                BeanUtil.setFieldValue(bean,name,value);
+            }
+        } catch (Exception e) {
+            throw new BeansException("setting propertyValue of bean failed: " + beanName);
+        }
+
     }
 
     protected Object createBeanInstance(String name, BeanDefinition beanDefinition, Object[] args) {

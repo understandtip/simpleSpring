@@ -1,4 +1,6 @@
-package com.jackqiu.simpleSpring;
+package com.jackqiu.simpleSpring.factory;
+
+import com.jackqiu.simpleSpring.BeansException;
 
 /**
  * Bean工厂对象，用于Bean对象的注册与获取

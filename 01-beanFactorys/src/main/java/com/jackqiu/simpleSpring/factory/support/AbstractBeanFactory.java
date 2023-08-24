@@ -1,6 +1,6 @@
 package com.jackqiu.simpleSpring.factory.support;
 
-import com.jackqiu.simpleSpring.BeanFactory;
+import com.jackqiu.simpleSpring.factory.BeanFactory;
 import com.jackqiu.simpleSpring.BeansException;
 import com.jackqiu.simpleSpring.factory.config.BeanDefinition;
 
